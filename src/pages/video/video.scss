@@ -1,0 +1,80 @@
+.viewport {
+  position: relative;
+  padding: 1vh 0 1vh;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  .share-container {
+    display: none;
+    &.in-sharing {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .share-container-viewport {
+      display: inline-block;
+      max-width: 100%;
+    }
+    .share-canvas {
+      width: 100%;
+      height: 100%;
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    &.in-sharing {
+      width: 264px;
+      flex-shrink: 0;
+      border-left: 1px solid #333;
+    }
+    .canvas-container-1 {
+      z-index: 0;
+    }
+    .canvas-container-2 {
+      z-index: 999;
+      position: absolute;
+      top: 0;
+      left: calc(100% - 300px);
+      border: 1px solid white;
+    }
+  }
+  .avatar-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+  }
+  .video-operations {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .avatar-wrap {
+    position: absolute;
+    pointer-events: auto;
+    list-style: none;
+    top: 0;
+    left: 0;
+  }
+  .avatar-wrap-dragging {
+    z-index: 10;
+  }
+  .video-footer {
+    top: calc(100% - 100px);
+    z-index: 999;
+    position: absolute;
+  }
+}
